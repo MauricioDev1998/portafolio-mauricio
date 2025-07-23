@@ -1,8 +1,6 @@
 import { Outlet, useLocation, Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 import bgHeader from "../assets/bg-header.jpg"
-import IconGit from "../assets/social/icons8-github.svg"
-import IconLinkedIn from "../assets/social/icons8-linkedin-96.svg"
 
 const AppLayout = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -27,11 +25,6 @@ const AppLayout = () => {
         { name: 'Skills', path: '/skills' },
         { name: 'Proyectos', path: '/projects' },
         { name: 'Contacto', path: '/contact' }
-    ]
-
-    const socialLinks = [
-        { name: 'GitHub', url: 'https://github.com/tu_usuario', icon: IconGit },
-        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/tu_usuario/', icon: IconLinkedIn },
     ]
 
     return (
