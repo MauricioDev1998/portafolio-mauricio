@@ -104,7 +104,7 @@ const AppLayout = () => {
                     </div>
 
                     <div className={`md:hidden overflow-hidden transition-all duration-300 ${
-                        isMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+                        isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}>
                         <div className="pt-6 pb-4 space-y-2 bg-black/80 backdrop-blur-xl rounded-2xl mt-6 border border-white/10 shadow-2xl">
                             {navItems.map((item) => (
