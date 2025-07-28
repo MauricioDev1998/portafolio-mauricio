@@ -7,7 +7,6 @@ const Projects = () => {
             <div className="min-h-screen px-6 py-20">
                 <div className="max-w-7xl mx-auto">
                     
-                    {/* Header */}
                     <div className="text-center mb-20">
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in">
                             Mis <span className="text-gray-300">Proyectos</span>
@@ -17,10 +16,8 @@ const Projects = () => {
                         </p>
                     </div>
 
-                    {/* Proyectos destacados - En construcción */}
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                         
-                        {/* Proyecto placeholder 1 */}
                         <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10">
                             <div className="aspect-video bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl mb-6 flex items-center justify-center">
                                 <span className="text-4xl">🚀</span>
@@ -45,7 +42,6 @@ const Projects = () => {
                             </div>
                         </div>
 
-                        {/* Proyecto placeholder 2 */}
                         <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10">
                             <div className="aspect-video bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-2xl mb-6 flex items-center justify-center">
                                 <span className="text-4xl">📱</span>
@@ -70,7 +66,6 @@ const Projects = () => {
                             </div>
                         </div>
 
-                        {/* Proyecto placeholder 3 */}
                         <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10">
                             <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl mb-6 flex items-center justify-center">
                                 <span className="text-4xl">🎨</span>
@@ -97,7 +92,6 @@ const Projects = () => {
 
                     </div>
 
-                    {/* Mensaje de construcción */}
                     <div className="text-center bg-white/5 backdrop-blur-xl rounded-3xl p-12 border border-white/10">
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                             Más proyectos <span className="text-gray-300">en camino</span>

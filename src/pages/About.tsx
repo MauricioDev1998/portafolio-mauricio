@@ -64,7 +64,7 @@ const About = () => {
                                     </p>
                                     <p>
                                         Me apasiona la mejora continua, la colaboración y el uso de buenas prácticas de desarrollo. 
-                                        Actualmente estoy expandiendo mis habilidades hacia el uso de Docker y .NET para proyectos robustos y productivos.
+                                        Actualmente estoy expandiendo mis habilidades hacia el uso de Docker para proyectos robustos y productivos.
 
                                         Estoy abierto a colaborar en proyectos desafiantes, ya sea en desarrollo backend o frontend.
                                     </p>

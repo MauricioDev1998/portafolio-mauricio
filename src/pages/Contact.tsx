@@ -1,5 +1,7 @@
 import PageTransition from "../components/PageTransition";
 import React, { useState } from "react";
+import { sendContactForm } from "../api/contactApi";
+import type { ContactFormData } from "../types";
 
 const initialForm = { name: "", email: "", message: "" };
 
@@ -12,9 +14,7 @@ const Contact = () => {
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ) => {
         setForm({ ...form, [e.target.name]: e.target.value });
         setErrors({ ...errors, [e.target.name]: "" });
     };
@@ -30,7 +30,7 @@ const Contact = () => {
         return newErrors;
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const validationErrors = validate();
         if (Object.keys(validationErrors).length > 0) {
@@ -38,11 +38,15 @@ const Contact = () => {
             return;
         }
         setLoading(true);
-        setTimeout(() => {
+        try {
+            await sendContactForm(form as ContactFormData);
             setSubmitted(true);
-            setLoading(false);
             setForm(initialForm);
-        }, 1200);
+        } catch (error) {
+            console.error("Error al enviar el formulario:", error);
+            setErrors({ form: "Hubo un error al enviar el formulario." });
+        }
+        setLoading(false);
     };
 
     return (
@@ -54,15 +58,27 @@ const Contact = () => {
                             Contácta<span className="text-gray-300">me</span>
                         </h1>
                         <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
-                            ¿Tienes alguna pregunta, propuesta o simplemente quieres saludar? ¡Envíame un mensaje!
+                            ¿Tienes alguna pregunta o propuesta? ¡Envíame un mensaje!
                         </p>
                     </div>
-                    <div className="grid lg:grid-cols-2 gap-12">
+                    <div className=" gap-12">
                         <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10 shadow-2xl flex flex-col justify-center">
                             <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
                                 <span className="text-4xl">📬</span>
                                 Formulario de contacto
                             </h2>
+                            
+                            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-6">
+                                <div className="flex items-center gap-3 mb-2 md:mb-0">
+                                    <span className="text-2xl">📧</span>
+                                    <span className="text-gray-200 text-lg">mauricio.gobti@gmail.com</span>
+                                </div>
+                                <div className="hidden md:block h-8 w-px bg-white/20 mx-2" />
+                                <div className="flex items-center gap-3">
+                                    <span className="text-2xl">📍</span>
+                                    <span className="text-gray-200 text-lg">Toluca, México</span>
+                                </div>
+                            </div>
                             {submitted ? (
                                 <div className="flex flex-col items-center justify-center h-full animate-fade-in">
                                     <span className="text-green-400 text-4xl mb-4">✔️</span>
@@ -126,32 +142,12 @@ const Contact = () => {
                                     <button
                                         type="submit"
                                         disabled={loading}
-                                        className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition disabled:opacity-60 shadow-lg"
+                                        className="w-full py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         {loading ? "Enviando..." : "Enviar"}
                                     </button>
                                 </form>
                             )}
-                        </div>
-                        <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10 shadow-2xl flex flex-col justify-center">
-                            <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                                <span className="text-4xl">📞</span>
-                                Información de contacto
-                            </h2>
-                            <div className="space-y-6">
-                                <div className="flex items-center gap-4">
-                                    <span className="text-2xl">📧</span>
-                                    <span className="text-gray-200 text-lg">mauricio.gobti@gmail.com</span>
-                                </div>
-                                <div className="flex items-center gap-4">
-                                    <span className="text-2xl">📍</span>
-                                    <span className="text-gray-200 text-lg">Toluca, México</span>
-                                </div>
-                                <div className="flex items-center gap-4">
-                                    <span className="text-2xl">💼</span>
-                                    <span className="text-gray-200 text-lg">Desarrollador Full Stack en Gob-TI</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
