@@ -30,6 +30,14 @@ import javaIcon from "../assets/icons-tech/java.svg"
 import springIcon from "../assets/icons-tech/spring.svg"
 import pythonIcon from "../assets/icons-tech/python.svg"
 import djangoIcon from "../assets/icons-tech/django.svg"
+import tanstackQueryIcon from "../assets/icons-tech/tanstack-query.svg"
+import reactHookFormIcon from "../assets/icons-tech/react-hook-form.svg"
+import zodIcon from "../assets/icons-tech/zod.svg"
+import viteIcon from "../assets/icons-tech/vite.svg"
+import angularIcon from "../assets/icons-tech/angular.svg"
+import dockerIcon from "../assets/icons-tech/docker.svg"
+import npmIcon from "../assets/icons-tech/npm.svg"
+import composerIcon from "../assets/icons-tech/composer.svg"
 
 const Skills = () => {
     const technologies = [
@@ -46,6 +54,10 @@ const Skills = () => {
                 { name: "Sass", icon: sassIcon, level: "Intermedio", color: "from-pink-500 to-pink-600" },
                 { name: "Next.js", icon: nextIcon, level: "Básico", color: "from-gray-700 to-gray-800" },
                 { name: "Vue.js", icon: vueIcon, level: "Básico", color: "from-green-400 to-green-500" },
+                { name: "Angular", icon: angularIcon, level: "Básico", color: "from-red-600 to-pink-600", dark: true },
+                { name: "TanStack Query", icon: tanstackQueryIcon, level: "Intermedio", color: "from-red-500 to-amber-500" },
+                { name: "React Hook Form", icon: reactHookFormIcon, level: "Intermedio", color: "from-pink-500 to-rose-500" },
+                { name: "Zod", icon: zodIcon, level: "Intermedio", color: "from-blue-600 to-indigo-600" },
                 { name: "Redux", icon: reduxIcon, level: "Intermedio", color: "from-purple-600 to-purple-700" },
                 { name: "Material-UI", icon: materialUiIcon, level: "Básico", color: "from-blue-400 to-blue-500" },
                 { name: "jQuery", icon: jqueryIcon, level: "Intermedio", color: "from-blue-600 to-indigo-600" }
@@ -61,7 +73,7 @@ const Skills = () => {
                 { name: "Java", icon: javaIcon, level: "Básico", color: "from-orange-600 to-red-600" },
                 { name: "Spring", icon: springIcon, level: "Básico", color: "from-green-600 to-green-700" },
                 { name: "Python", icon: pythonIcon, level: "Básico", color: "from-yellow-500 to-blue-500" },
-                { name: "Django", icon: djangoIcon, level: "Básico", color: "from-green-700 to-green-800" },
+                { name: "Django", icon: djangoIcon, level: "Básico", color: "from-green-700 to-green-800", dark: true },
                 { name: "JWT", icon: jwtIcon, level: "Intermedio", color: "from-pink-500 to-rose-500" },
                 { name: "Sequelize", icon: sequelizeIcon, level: "Intermedio", color: "from-blue-500 to-indigo-500" }
             ]
@@ -78,9 +90,13 @@ const Skills = () => {
             category: "Herramientas",
             skills: [
                 { name: "Git", icon: gitIcon, level: "Avanzado", color: "from-orange-500 to-red-500" },
-                { name: "GitHub", icon: githubIcon, level: "Avanzado", color: "from-gray-700 to-gray-900" },
+                { name: "GitHub", icon: githubIcon, level: "Avanzado", color: "from-gray-700 to-gray-900", dark: true },
                 { name: "VS Code", icon: vscIcon, level: "Avanzado", color: "from-blue-500 to-blue-600" },
-                { name: "Postman", icon: postmanIcon, level: "Avanzado", color: "from-orange-500 to-orange-600" }
+                { name: "Postman", icon: postmanIcon, level: "Avanzado", color: "from-orange-500 to-orange-600" },
+                { name: "Vite", icon: viteIcon, level: "Intermedio", color: "from-purple-500 to-yellow-400" },
+                { name: "Docker", icon: dockerIcon, level: "Básico", color: "from-blue-400 to-blue-600" },
+                { name: "npm", icon: npmIcon, level: "Avanzado", color: "from-red-600 to-red-700" },
+                { name: "Composer", icon: composerIcon, level: "Avanzado", color: "from-amber-600 to-yellow-700" }
             ]
         }
     ]
@@ -123,7 +139,7 @@ const Skills = () => {
                                     {category.skills.map((skill, skillIndex) => (
                                         <div
                                             key={skill.name}
-                                            className="group relative bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl cursor-pointer"
+                                            className="animate-fade-in group relative bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl cursor-pointer"
                                             style={{ animationDelay: `${(categoryIndex * 100) + (skillIndex * 50)}ms` }}
                                         >
                                             <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
@@ -133,7 +149,11 @@ const Skills = () => {
                                                     <img
                                                         src={skill.icon}
                                                         alt={skill.name}
-                                                        className="w-full h-full object-contain filter group-hover:drop-shadow-lg transition-all duration-500"
+                                                        className={`w-full h-full object-contain transition-all duration-500 ${
+                                                            skill.dark
+                                                                ? 'brightness-0 invert opacity-80 group-hover:opacity-100'
+                                                                : 'group-hover:drop-shadow-lg'
+                                                        }`}
                                                     />
                                                 </div>
                                                 

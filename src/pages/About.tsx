@@ -1,6 +1,8 @@
 
 import PageTransition from "../components/PageTransition"
 import perfilImg from "../assets/perfil.jpg"
+import cvFile from "../assets/CV_MAURICIO_REYES.pdf"
+import { socialLinks } from "../data/social"
 
 const About = () => {
     return (
@@ -19,7 +21,7 @@ const About = () => {
 
                     <div className="grid lg:grid-cols-3 gap-16 mb-20">
                         <div className="lg:col-span-1">
-                            <div className="sticky top-8">
+                            <div className="sticky top-28">
                                 <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10">
                                     <div className="text-center mb-8">
                                         <div className="w-48 h-48 mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 mb-6">
@@ -40,11 +42,44 @@ const About = () => {
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <div className="w-2 h-2 bg-white rounded-full"></div>
-                                            <span className="text-gray-200">💼 Desarrollador Full Stack en Gob-TI</span>
+                                            <span className="text-gray-200">💼 Desarrollador Full Stack en CIFO Technologies</span>
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <div className="w-2 h-2 bg-white rounded-full"></div>
-                                            <span className="text-gray-200">📧 mauricio.gobti@gmail.com</span>
+                                            <a
+                                                href="mailto:idgsmauricioreyes@gmail.com"
+                                                className="text-gray-200 hover:text-white transition-colors duration-300"
+                                            >
+                                                📧 idgsmauricioreyes@gmail.com
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-8 pt-6 border-t border-white/10 space-y-4">
+                                        <a
+                                            href={cvFile}
+                                            download="CV_Mauricio_Reyes.pdf"
+                                            className="block w-full text-center px-6 py-3 bg-white text-black rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300"
+                                        >
+                                            Descargar CV
+                                        </a>
+                                        <div className="flex justify-center gap-4">
+                                            {socialLinks.map((social) => (
+                                                <a
+                                                    key={social.name}
+                                                    href={social.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    aria-label={social.name}
+                                                    className="w-11 h-11 flex items-center justify-center bg-white/10 rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30 hover:scale-110 transition-all duration-300"
+                                                >
+                                                    <img
+                                                        src={social.icon}
+                                                        alt={social.name}
+                                                        className={`w-5 h-5 object-contain ${social.dark ? 'brightness-0 invert opacity-90' : ''}`}
+                                                    />
+                                                </a>
+                                            ))}
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +94,7 @@ const About = () => {
                                 </h2>
                                 <div className="space-y-4 text-gray-200 leading-relaxed">
                                     <p>
-                                        Soy Ingeniero en Desarrollo y Gestión de Software con más de 2 años de experiencia desarrollando soluciones web con tecnologías modernas como Laravel, React, Node.js y TypeScript. 
+                                        Soy Ingeniero en Desarrollo y Gestión de Software con más de 3 años de experiencia desarrollando soluciones web con tecnologías modernas como Laravel, React, Node.js y TypeScript.
                                         Me especializo en construir aplicaciones eficientes, escalables y enfocadas en la experiencia del usuario.
                                     </p>
                                     <p>
@@ -96,12 +131,39 @@ const About = () => {
 
                             <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10">
                                 <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                                    <span className="text-4xl">💼</span>
+                                    Experiencia
+                                </h2>
+                                <div className="space-y-6">
+                                    <div className="border-l-4 border-white/40 pl-6">
+                                        <h3 className="text-xl font-semibold text-white">CIFO Technologies</h3>
+                                        <p className="text-gray-300 mb-2">Desarrollador Full Stack · Actualidad</p>
+                                        <p className="text-gray-200 text-sm leading-relaxed">
+                                            Desarrollo de sistemas para entidades públicas: aplicaciones web con React,
+                                            TypeScript y Laravel, con foco en seguridad, escalabilidad y experiencia de usuario.
+                                        </p>
+                                    </div>
+                                    <div className="border-l-4 border-white/20 pl-6">
+                                        <h3 className="text-xl font-semibold text-white">Gob-TI</h3>
+                                        <p className="text-gray-300 mb-2">Desarrollador Full Stack</p>
+                                        <p className="text-gray-200 text-sm leading-relaxed">
+                                            Desarrollo de un sistema de digitalización de trámites para gobierno municipal:
+                                            APIs REST en Laravel, interfaces en React con TypeScript, workflows de autorización
+                                            multinivel con firma digital, generación de documentos oficiales en PDF y
+                                            endurecimiento de seguridad para el manejo de archivos sensibles.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10">
+                                <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
                                     <span className="text-4xl">🎓</span>
                                     Educación
                                 </h2>
                                 <div className="space-y-6">
                                     <div className="border-l-4 border-white/20 pl-6">
-                                        <h3 className="text-xl font-semibold text-white">Universidad Tecnologica del Valle de Toluca</h3>
+                                        <h3 className="text-xl font-semibold text-white">Universidad Tecnológica del Valle de Toluca</h3>
                                         <p className="text-gray-300 mb-2">Ingeniero en Desarrollo y Gestión de Software</p>
                                         <p className="text-gray-200 text-sm">
                                             Mi formación combina teoría y práctica, enfocándose en el desarrollo de software ágil y la gestión de proyectos tecnológicos.
@@ -138,9 +200,9 @@ const About = () => {
                                             from: "Udemy"
                                         }
                                     ].map((course, index) => (
-                                        <div 
-                                            key={index}
-                                            className="p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/10"
+                                        <div
+                                            key={course.title}
+                                            className="animate-fade-in p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/10"
                                             style={{ animationDelay: `${index * 100}ms` }}
                                         >
                                             <h4 className="font-semibold text-white mb-2">{course.title}</h4>
@@ -167,9 +229,9 @@ const About = () => {
                                         { icon: "🎬", text: "Cine" },
                                         { icon: "🎵", text: "Música" }
                                     ].map((interest, index) => (
-                                        <div 
-                                            key={index}
-                                            className="flex items-center gap-3 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/10 hover:scale-105"
+                                        <div
+                                            key={interest.text}
+                                            className="animate-fade-in flex items-center gap-3 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/10 hover:scale-105"
                                             style={{ animationDelay: `${index * 100}ms` }}
                                         >
                                             <span className="text-2xl">{interest.icon}</span>

@@ -1,6 +1,7 @@
 import { Outlet, useLocation, Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 import bgHeader from "../assets/bg-header.jpg"
+import { socialLinks } from "../data/social"
 
 const AppLayout = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -17,7 +18,8 @@ const AppLayout = () => {
 
     useEffect(() => {
         setIsMenuOpen(false)
-    }, [location])
+        window.scrollTo({ top: 0 })
+    }, [location.pathname])
 
     const navItems = [
         { name: 'Inicio', path: '/' },
@@ -87,6 +89,8 @@ const AppLayout = () => {
 
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+                            aria-expanded={isMenuOpen}
                             className="md:hidden relative w-12 h-12 flex items-center justify-center focus:outline-none bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20"
                         >
                             <div className="w-6 h-5 relative flex flex-col justify-between">
@@ -126,19 +130,38 @@ const AppLayout = () => {
             </header>
 
             <main className="relative z-10 pt-20 min-h-screen">
-                <div className="animate-fade-in">
-                    <Outlet />
-                </div>
+                <Outlet />
             </main>
 
             <footer className="relative z-10 bg-black/60 backdrop-blur-xl border-t border-white/10">
-                <p className="text-gray-400 text-sm leading-relaxed text-center py-4">
-                    Desarrollado por Mauricio Reyes - Todos los derechos reservados © {new Date().getFullYear()}
-                </p>
+                <div className="container mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+                    <p className="text-gray-400 text-sm leading-relaxed text-center">
+                        Desarrollado por Mauricio Reyes - Todos los derechos reservados © {new Date().getFullYear()}
+                    </p>
+                    <div className="flex items-center gap-3">
+                        {socialLinks.map((social) => (
+                            <a
+                                key={social.name}
+                                href={social.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={social.name}
+                                className="w-10 h-10 flex items-center justify-center bg-white/10 rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30 hover:scale-105 transition-all duration-300"
+                            >
+                                <img
+                                    src={social.icon}
+                                    alt={social.name}
+                                    className={`w-5 h-5 object-contain ${social.dark ? 'brightness-0 invert opacity-90' : ''}`}
+                                />
+                            </a>
+                        ))}
+                    </div>
+                </div>
             </footer>
 
             <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                aria-label="Volver arriba"
                 className={`fixed bottom-8 right-8 w-14 h-14 bg-white/10 backdrop-blur-xl rounded-2xl flex items-center justify-center shadow-2xl shadow-black/30 hover:bg-white/20 hover:scale-105 transition-all duration-300 z-50 border border-white/20 ${
                     scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
                 }`}

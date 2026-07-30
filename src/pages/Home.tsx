@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import PageTransition from "../components/PageTransition"
 import perfilImg from "../assets/perfil.jpg"
 import cvFile from "../assets/CV_MAURICIO_REYES.pdf"
+import { socialLinks } from "../data/social"
 
 const Home = () => {
     return (
@@ -32,7 +33,7 @@ const Home = () => {
                                         <span className="text-gray-200 font-light block">
                                             Hola, soy
                                         </span>
-                                        <span className="text-white animate-float inline-block tracking-wide">
+                                        <span className="text-white inline-block tracking-wide">
                                             Mauricio Reyes
                                         </span>
                                     </h1>
@@ -42,12 +43,8 @@ const Home = () => {
                                     </p>
                                     
                                     <p className="text-lg text-gray-200 max-w-3xl lg:max-w-2xl leading-relaxed">
-                                        Soy desarrollador Full Stack apasionado por crear soluciones digitales innovadoras que realmente aporten valor. 
-                                        Disfruto combinar tecnologías modernas como React, Laravel y Node.js con un enfoque centrado en la experiencia del usuario.
-                                    </p>
-                                    
-                                    <p className="text-base text-gray-300 max-w-3xl lg:max-w-2xl leading-relaxed">
-                                        Me motiva aprender constantemente, enfrentar nuevos retos y construir proyectos de calidad, escalables y útiles para las personas.
+                                        Ingeniero en Desarrollo de Software con más de 3 años de experiencia construyendo aplicaciones web con React, Laravel y Node.js.
+                                        Actualmente desarrollo sistemas para entidades públicas en CIFO Technologies, con foco en seguridad, escalabilidad y experiencia de usuario.
                                     </p>
                                 </div>
 
@@ -75,19 +72,38 @@ const Home = () => {
                                         Contáctame
                                     </Link>
                                 </div>
+
+                                <div className="flex gap-4 justify-center lg:justify-start pt-2">
+                                    {socialLinks.map((social) => (
+                                        <a
+                                            key={social.name}
+                                            href={social.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={social.name}
+                                            className="w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/20 hover:border-white/30 hover:scale-110 transition-all duration-300"
+                                        >
+                                            <img
+                                                src={social.icon}
+                                                alt={social.name}
+                                                className={`w-6 h-6 object-contain ${social.dark ? 'brightness-0 invert opacity-90' : ''}`}
+                                            />
+                                        </a>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="mt-24 text-center">
-                        <p className="text-gray-200 text-sm mb-10 tracking-wider font-medium">TECNOLOGÍAS QUE DOMINO</p>
+                        <p className="text-gray-200 text-sm mb-10 tracking-wider font-medium">STACK PRINCIPAL</p>
                         <div className="flex flex-wrap justify-center gap-4">
                             {[
                                 'PHP', 'Laravel', 'React', 'Node.js', 'TypeScript', 'Tailwind', 'Express'
                             ].map((tech, index) => (
                                 <div
                                     key={tech}
-                                    className="px-6 py-3 bg-white/10 backdrop-blur-xl rounded-2xl text-sm text-gray-100 hover:bg-white/20 hover:text-white transition-all duration-300 border border-white/10 hover:border-white/30 hover:scale-105 hover:shadow-lg"
+                                    className="animate-fade-in px-6 py-3 bg-white/10 backdrop-blur-xl rounded-2xl text-sm text-gray-100 hover:bg-white/20 hover:text-white transition-all duration-300 border border-white/10 hover:border-white/30 hover:scale-105 hover:shadow-lg"
                                     style={{ animationDelay: `${index * 100}ms` }}
                                 >
                                     {tech}

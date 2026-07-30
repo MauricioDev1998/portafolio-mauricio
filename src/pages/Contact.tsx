@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { sendContactForm } from "../api/contactApi";
 import type { ContactFormData } from "../types";
 
-const initialForm = { name: "", email: "", message: "" };
+const initialForm: ContactFormData = { name: "", email: "", message: "" };
 
 const validateEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -16,7 +16,7 @@ const Contact = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ) => {
         setForm({ ...form, [e.target.name]: e.target.value });
-        setErrors({ ...errors, [e.target.name]: "" });
+        setErrors({ ...errors, [e.target.name]: "", form: "" });
     };
 
     const validate = () => {
@@ -39,7 +39,7 @@ const Contact = () => {
         }
         setLoading(true);
         try {
-            await sendContactForm(form as ContactFormData);
+            await sendContactForm(form);
             setSubmitted(true);
             setForm(initialForm);
         } catch (error) {
@@ -71,7 +71,7 @@ const Contact = () => {
                             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-6">
                                 <div className="flex items-center gap-3 mb-2 md:mb-0">
                                     <span className="text-2xl">📧</span>
-                                    <span className="text-gray-200 text-lg">mauricio.gobti@gmail.com</span>
+                                    <span className="text-gray-200 text-lg">idgsmauricioreyes@gmail.com</span>
                                 </div>
                                 <div className="hidden md:block h-8 w-px bg-white/20 mx-2" />
                                 <div className="flex items-center gap-3">
@@ -85,6 +85,13 @@ const Contact = () => {
                                     <p className="text-green-400 text-center font-semibold text-lg">
                                         ¡Gracias por tu mensaje! Te responderé pronto.
                                     </p>
+                                    <button
+                                        type="button"
+                                        onClick={() => setSubmitted(false)}
+                                        className="mt-6 px-6 py-3 bg-white/10 text-gray-200 rounded-xl font-medium hover:bg-white/20 hover:text-white transition-colors duration-300 border border-white/20"
+                                    >
+                                        Enviar otro mensaje
+                                    </button>
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit} noValidate className="space-y-6">
@@ -139,6 +146,11 @@ const Contact = () => {
                                             <span className="text-red-400 text-sm">{errors.message}</span>
                                         )}
                                     </div>
+                                    {errors.form && (
+                                        <p className="text-red-400 text-sm text-center bg-red-500/10 border border-red-500/30 rounded-xl px-4 py-3">
+                                            {errors.form}
+                                        </p>
+                                    )}
                                     <button
                                         type="submit"
                                         disabled={loading}
