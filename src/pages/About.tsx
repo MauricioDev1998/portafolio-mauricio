@@ -42,7 +42,7 @@ const About = () => {
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <div className="w-2 h-2 bg-white rounded-full"></div>
-                                            <span className="text-gray-200">💼 Desarrollador Full Stack en CIFO Technologies</span>
+                                            <span className="text-gray-200">💼 Líder de Desarrollo Full Stack en CIFO Technologies</span>
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <div className="w-2 h-2 bg-white rounded-full"></div>
@@ -94,7 +94,7 @@ const About = () => {
                                 </h2>
                                 <div className="space-y-4 text-gray-200 leading-relaxed">
                                     <p>
-                                        Soy Ingeniero en Desarrollo y Gestión de Software con más de 3 años de experiencia desarrollando soluciones web con tecnologías modernas como Laravel, React, Node.js y TypeScript.
+                                        Soy Ingeniero en Desarrollo y Gestión de Software con más de 4 años de experiencia desarrollando soluciones web con tecnologías modernas como Laravel, React, Node.js y TypeScript.
                                         Me especializo en construir aplicaciones eficientes, escalables y enfocadas en la experiencia del usuario.
                                     </p>
                                     <p>
@@ -137,20 +137,24 @@ const About = () => {
                                 <div className="space-y-6">
                                     <div className="border-l-4 border-white/40 pl-6">
                                         <h3 className="text-xl font-semibold text-white">CIFO Technologies</h3>
-                                        <p className="text-gray-300 mb-2">Desarrollador Full Stack · Actualidad</p>
+                                        <p className="text-gray-300 mb-2">Líder de Desarrollo / Full Stack · Septiembre 2025 — Actualidad</p>
                                         <p className="text-gray-200 text-sm leading-relaxed">
-                                            Desarrollo de sistemas para entidades públicas: aplicaciones web con React,
-                                            TypeScript y Laravel, con foco en seguridad, escalabilidad y experiencia de usuario.
+                                            Coordino un equipo de 3 desarrolladores en la construcción de sistemas para
+                                            entidades públicas: aplicaciones web con React, TypeScript y Laravel, con foco
+                                            en seguridad, escalabilidad y experiencia de usuario.
                                         </p>
                                     </div>
                                     <div className="border-l-4 border-white/20 pl-6">
                                         <h3 className="text-xl font-semibold text-white">Gob-TI</h3>
-                                        <p className="text-gray-300 mb-2">Desarrollador Full Stack</p>
+                                        <p className="text-gray-300 mb-2">Líder de Desarrollo / Full Stack · Agosto 2023 — Agosto 2025</p>
                                         <p className="text-gray-200 text-sm leading-relaxed">
-                                            Desarrollo de un sistema de digitalización de trámites para gobierno municipal:
-                                            APIs REST en Laravel, interfaces en React con TypeScript, workflows de autorización
-                                            multinivel con firma digital, generación de documentos oficiales en PDF y
-                                            endurecimiento de seguridad para el manejo de archivos sensibles.
+                                            Lideré un equipo de 3 desarrolladores en sistemas para gobierno municipal bajo
+                                            Clean Architecture, incluyendo un sistema de trámites de desarrollo urbano que
+                                            digitalizó más de 18 trámites: APIs REST en Laravel, interfaces en React con
+                                            TypeScript, workflows de autorización multinivel con firma digital, generación
+                                            de documentos oficiales en PDF y endurecimiento de seguridad para el manejo de
+                                            archivos sensibles. Eliminó el uso de hojas de Excel y la recaptura manual de
+                                            información ya proporcionada por el contribuyente.
                                         </p>
                                     </div>
                                 </div>

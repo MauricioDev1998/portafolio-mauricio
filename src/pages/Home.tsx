@@ -43,8 +43,8 @@ const Home = () => {
                                     </p>
                                     
                                     <p className="text-lg text-gray-200 max-w-3xl lg:max-w-2xl leading-relaxed">
-                                        Ingeniero en Desarrollo de Software con más de 3 años de experiencia construyendo aplicaciones web con React, Laravel y Node.js.
-                                        Actualmente desarrollo sistemas para entidades públicas en CIFO Technologies, con foco en seguridad, escalabilidad y experiencia de usuario.
+                                        Ingeniero en Desarrollo de Software con más de 4 años de experiencia construyendo aplicaciones web con React, Laravel y Node.js.
+                                        Actualmente lidero un equipo de desarrollo en CIFO Technologies, construyendo sistemas para entidades públicas con foco en seguridad, escalabilidad y experiencia de usuario.
                                     </p>
                                 </div>
 

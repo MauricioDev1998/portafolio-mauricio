@@ -10,6 +10,8 @@ export const projects: Project[] = [
         description:
             "Plataforma full stack para digitalizar trámites de desarrollo urbano (constancias de alineamiento, número oficial, licencias). Sustituye un flujo en papel por un workflow con control de roles, firma digital y trazabilidad completa del expediente, desde el ingreso ciudadano sin registro (folio + token de seguimiento) hasta el archivo, cumpliendo requisitos de auditoría ISO 9001/37001.",
         highlights: [
+            "Digitalizó más de 18 trámites distintos, eliminando el uso de hojas de Excel y la recaptura manual de información que el contribuyente ya había proporcionado.",
+            "Lideré el equipo de 3 desarrolladores que construyó el sistema, bajo principios de Clean Architecture.",
             "Motor de workflow configurable por base de datos: estados, transiciones, roles y áreas se definen por catálogo — agregar un trámite nuevo no requiere programar su flujo.",
             "Cadena de autorización de tres niveles con firma digital embebida en los documentos: re-validación de contraseña, imágenes de firma cifradas en reposo (AES) y regeneración del PDF acumulando firmas sin perder datos.",
             "Endurecimiento de seguridad: archivos sensibles en almacenamiento privado servidos solo por endpoints autenticados, rate limiting y revocación de tokens.",
