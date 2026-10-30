@@ -42,7 +42,7 @@ const About = () => {
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <div className="w-2 h-2 bg-white rounded-full"></div>
-                                            <span className="text-gray-200">💼 Líder de Desarrollo Full Stack en CIFO Technologies</span>
+                                            <span className="text-gray-200">💼 Desarrollador Full Stack en CIFO Technologies</span>
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <div className="w-2 h-2 bg-white rounded-full"></div>
@@ -137,11 +137,14 @@ const About = () => {
                                 <div className="space-y-6">
                                     <div className="border-l-4 border-white/40 pl-6">
                                         <h3 className="text-xl font-semibold text-white">CIFO Technologies</h3>
-                                        <p className="text-gray-300 mb-2">Líder de Desarrollo / Full Stack · Septiembre 2025 — Actualidad</p>
+                                        <p className="text-gray-300 mb-2">Desarrollador Full Stack · Septiembre 2025 — Actualidad</p>
                                         <p className="text-gray-200 text-sm leading-relaxed">
-                                            Coordino un equipo de 3 desarrolladores en la construcción de sistemas para
-                                            entidades públicas: aplicaciones web con React, TypeScript y Laravel, con foco
-                                            en seguridad, escalabilidad y experiencia de usuario.
+                                            Participo en el rediseño del módulo de Egresos del sistema financiero de
+                                            un gobierno municipal: migración de una aplicación de escritorio a una
+                                            plataforma web (Laravel, GraphQL, Vue/Nuxt) que reimplementa el ciclo de
+                                            ejecución del gasto público -Comprometido, Devengado, Pagado- con
+                                            reversiones y cancelaciones contables conforme a la normatividad CONAC,
+                                            sobre Oracle y con una arquitectura por capas inspirada en DDD.
                                         </p>
                                     </div>
                                     <div className="border-l-4 border-white/20 pl-6">

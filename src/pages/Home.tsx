@@ -44,7 +44,7 @@ const Home = () => {
                                     
                                     <p className="text-lg text-gray-200 max-w-3xl lg:max-w-2xl leading-relaxed">
                                         Ingeniero en Desarrollo de Software con más de 4 años de experiencia construyendo aplicaciones web con React, Laravel y Node.js.
-                                        Actualmente lidero un equipo de desarrollo en CIFO Technologies, construyendo sistemas para entidades públicas con foco en seguridad, escalabilidad y experiencia de usuario.
+                                        Actualmente trabajo como Desarrollador Full Stack en CIFO Technologies, construyendo sistemas para entidades públicas con foco en seguridad, escalabilidad y experiencia de usuario.
                                     </p>
                                 </div>
 
@@ -99,7 +99,7 @@ const Home = () => {
                         <p className="text-gray-200 text-sm mb-10 tracking-wider font-medium">STACK PRINCIPAL</p>
                         <div className="flex flex-wrap justify-center gap-4">
                             {[
-                                'PHP', 'Laravel', 'React', 'Node.js', 'TypeScript', 'Tailwind', 'Express'
+                                'PHP', 'Laravel', 'GraphQL', 'Oracle', 'Vue', 'React', 'TypeScript', 'Tailwind'
                             ].map((tech, index) => (
                                 <div
                                     key={tech}

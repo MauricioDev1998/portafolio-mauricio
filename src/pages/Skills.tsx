@@ -38,6 +38,8 @@ import angularIcon from "../assets/icons-tech/angular.svg"
 import dockerIcon from "../assets/icons-tech/docker.svg"
 import npmIcon from "../assets/icons-tech/npm.svg"
 import composerIcon from "../assets/icons-tech/composer.svg"
+import graphqlIcon from "../assets/icons-tech/graphql.svg"
+import oracleIcon from "../assets/icons-tech/oracle.svg"
 
 const Skills = () => {
     const technologies = [
@@ -53,7 +55,7 @@ const Skills = () => {
                 { name: "Bootstrap", icon: bootstrapIcon, level: "Intermedio", color: "from-purple-500 to-purple-600" },
                 { name: "Sass", icon: sassIcon, level: "Intermedio", color: "from-pink-500 to-pink-600" },
                 { name: "Next.js", icon: nextIcon, level: "Básico", color: "from-gray-700 to-gray-800" },
-                { name: "Vue.js", icon: vueIcon, level: "Básico", color: "from-green-400 to-green-500" },
+                { name: "Vue.js", icon: vueIcon, level: "Intermedio", color: "from-green-400 to-green-500" },
                 { name: "Angular", icon: angularIcon, level: "Básico", color: "from-red-600 to-pink-600", dark: true },
                 { name: "TanStack Query", icon: tanstackQueryIcon, level: "Intermedio", color: "from-red-500 to-amber-500" },
                 { name: "React Hook Form", icon: reactHookFormIcon, level: "Intermedio", color: "from-pink-500 to-rose-500" },
@@ -75,13 +77,15 @@ const Skills = () => {
                 { name: "Python", icon: pythonIcon, level: "Básico", color: "from-yellow-500 to-blue-500" },
                 { name: "Django", icon: djangoIcon, level: "Básico", color: "from-green-700 to-green-800", dark: true },
                 { name: "JWT", icon: jwtIcon, level: "Intermedio", color: "from-pink-500 to-rose-500" },
-                { name: "Sequelize", icon: sequelizeIcon, level: "Intermedio", color: "from-blue-500 to-indigo-500" }
+                { name: "Sequelize", icon: sequelizeIcon, level: "Intermedio", color: "from-blue-500 to-indigo-500" },
+                { name: "GraphQL", icon: graphqlIcon, level: "Avanzado", color: "from-pink-600 to-fuchsia-600", dark: true }
             ]
         },
         {
             category: "Bases de Datos",
             skills: [
                 { name: "MySQL", icon: mysqlIcon, level: "Avanzado", color: "from-blue-600 to-orange-500" },
+                { name: "Oracle", icon: oracleIcon, level: "Avanzado", color: "from-red-600 to-red-700", dark: true },
                 { name: "MongoDB", icon: mongoIcon, level: "Básico", color: "from-green-500 to-green-600" },
                 { name: "Firebase", icon: firebaseIcon, level: "Intermedio", color: "from-yellow-500 to-orange-500" }
             ]

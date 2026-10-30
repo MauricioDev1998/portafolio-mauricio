@@ -1,69 +1,43 @@
-# React + TypeScript + Vite
+# Portafolio — Mauricio Reyes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio personal para mostrar experiencia, skills y proyectos. SPA con React, TypeScript, Tailwind CSS y Vite; navegación con React Router y formulario de contacto conectado a una API.
 
-Currently, two official plugins are available:
+**Demo:** https://github.com/MauricioDev1998/portafolio-mauricio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack
 
-## Expanding the ESLint configuration
+- React 19 + TypeScript
+- React Router 7
+- Tailwind CSS 4
+- Vite 7
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Desarrollo local
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev      # servidor de desarrollo (puerto 3009)
+npm run build    # build de producción (tsc + vite build)
+npm run preview  # previsualiza el build
+npm run lint     # ESLint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Variables de entorno (`.env`, no versionado):
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+VITE_API_URL=<url de la API que recibe el formulario de contacto>
+```
+
+## Estructura
+
+```
+src/
+  api/          # llamadas a la API (contacto)
+  components/   # componentes compartidos (transición de página, etc.)
+  data/         # contenido editable: proyectos y redes sociales
+  layouts/      # layout general de la app
+  pages/        # Home, About, Skills, Projects, Contact, NotFound
+  routes/       # definición de rutas (React Router)
+  types/        # tipos compartidos
+```
+
+Para agregar o editar un proyecto, modifica `src/data/projects.ts`.

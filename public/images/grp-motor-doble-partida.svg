@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 575" width="100%" style="background:#ffffff">
+  <defs>
+    <marker id="arrowM1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#28253D"/>
+    </marker>
+    <marker id="arrowM2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a8fa8"/>
+    </marker>
+  </defs>
+  <style>text { font-family: -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }</style>
+
+  <line x1="340" y1="94" x2="340" y2="140" stroke="#28253D" stroke-width="2" marker-end="url(#arrowM1)"/>
+  <line x1="300" y1="204" x2="235" y2="250" stroke="#28253D" stroke-width="2" marker-end="url(#arrowM1)"/>
+  <line x1="380" y1="204" x2="445" y2="250" stroke="#28253D" stroke-width="2" marker-end="url(#arrowM1)"/>
+  <line x1="245" y1="310" x2="300" y2="360" stroke="#28253D" stroke-width="2" marker-end="url(#arrowM1)"/>
+  <line x1="435" y1="310" x2="380" y2="360" stroke="#28253D" stroke-width="2" marker-end="url(#arrowM1)"/>
+  <line x1="340" y1="430" x2="340" y2="460" stroke="#8a8fa8" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrowM2)"/>
+  <text x="420" y="450" text-anchor="middle" fill="#6b7280" font-size="10.5" font-style="italic">si se cancela / anula</text>
+
+  <rect x="140" y="30" width="400" height="64" rx="10" fill="#28253D"/>
+  <text x="340" y="56" text-anchor="middle" fill="#ffffff" font-size="14.5" font-weight="600">Movimiento presupuestal</text>
+  <text x="340" y="75" text-anchor="middle" fill="#c7cbe0" font-size="10.5">Comprometido · Devengado · Pagado</text>
+
+  <rect x="140" y="140" width="400" height="64" rx="10" fill="#28253D"/>
+  <text x="340" y="166" text-anchor="middle" fill="#ffffff" font-size="14.5" font-weight="600">Matriz de cuentas</text>
+  <text x="340" y="185" text-anchor="middle" fill="#c7cbe0" font-size="10.5">Resuelve por partida presupuestal + etapa</text>
+
+  <rect x="140" y="250" width="190" height="60" rx="10" fill="#28253D"/>
+  <text x="235" y="286" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="600">Cuenta de Cargo</text>
+
+  <rect x="350" y="250" width="190" height="60" rx="10" fill="#28253D"/>
+  <text x="445" y="286" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="600">Cuenta de Abono</text>
+
+  <rect x="140" y="360" width="400" height="70" rx="10" fill="#28253D"/>
+  <text x="340" y="390" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="600">Póliza</text>
+  <text x="340" y="410" text-anchor="middle" fill="#c7cbe0" font-size="10.5">Asientos balanceados: Debe = Haber</text>
+
+  <rect x="140" y="460" width="400" height="80" rx="10" fill="#ffffff" stroke="#28253D" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="340" y="488" text-anchor="middle" fill="#28253D" font-size="14" font-weight="600">Reversión (cancelación / anulación)</text>
+  <text x="340" y="507" text-anchor="middle" fill="#55597a" font-size="10.5">Nueva póliza: cargo ↔ abono invertido</text>
+  <text x="340" y="523" text-anchor="middle" fill="#55597a" font-size="10.5">La póliza original se marca, nunca se borra</text>
+</svg>
