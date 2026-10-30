@@ -5,7 +5,7 @@ import type { Project } from "../types";
 // Si un proyecto no tiene repo ni demo públicos, usa privateNote para explicarlo.
 export const projects: Project[] = [
     {
-        title: "GRP Metepec — Recursos Financieros (Egresos)",
+        title: "GRP — Recursos Financieros (Egresos)",
         context: "Gobierno municipal · Estado de México",
         description:
             "Rediseño completo del módulo de Egresos del sistema financiero municipal: migración de una aplicación de escritorio Java/Oracle a una plataforma web (Laravel, GraphQL, Vue/Nuxt), reimplementando el ciclo de ejecución del gasto público -Comprometido, Devengado y Pagado- con una arquitectura por capas inspirada en DDD y cumpliendo la normatividad contable gubernamental (CONAC).",
@@ -47,15 +47,16 @@ export const projects: Project[] = [
         title: "Sistema de Gestión de Trámites Urbanos",
         context: "Gobierno municipal · Estado de México",
         description:
-            "Plataforma full stack para digitalizar trámites de desarrollo urbano (constancias de alineamiento, número oficial, licencias). Sustituye un flujo en papel por un workflow con control de roles, firma digital y trazabilidad completa del expediente, desde el ingreso ciudadano sin registro (folio + token de seguimiento) hasta el archivo, cumpliendo requisitos de auditoría ISO 9001/37001.",
+            "Plataforma full stack para digitalizar trámites de desarrollo urbano (constancias de alineamiento y número oficial, cédulas de zonificación, licencias de uso de suelo y de publicidad). Sustituye un flujo en papel por un workflow con control de roles, firma digital y trazabilidad completa del expediente, desde el ingreso ciudadano sin registro (folio + token de seguimiento) hasta el archivo, cumpliendo requisitos de auditoría ISO 9001/37001.",
         highlights: [
-            "Digitalizó más de 18 trámites distintos, eliminando el uso de hojas de Excel y la recaptura manual de información que el contribuyente ya había proporcionado.",
-            "Lideré el equipo de 3 desarrolladores que construyó el sistema, bajo principios de Clean Architecture.",
+            "21 trámites con su flujo completo, eliminando el uso de hojas de Excel y la recaptura manual de información que el contribuyente ya había proporcionado.",
             "Motor de workflow configurable por base de datos: estados, transiciones, roles y áreas se definen por catálogo — agregar un trámite nuevo no requiere programar su flujo.",
-            "Cadena de autorización de tres niveles con firma digital embebida en los documentos: re-validación de contraseña, imágenes de firma cifradas en reposo (AES) y regeneración del PDF acumulando firmas sin perder datos.",
+            "Firma con e.firma del SAT en el navegador dentro de una cadena de autorización de tres niveles; el PDF se regenera acumulando firmas sin perder datos.",
+            "Generación de documentos oficiales en PDF (constancias, cédulas, licencias, oficios y órdenes de pago) con folio y código QR de verificación.",
+            "Cálculo de derechos (UMA y Código Financiero) y de plazos en días hábiles, con reportes de cumplimiento por trámite y por técnico.",
+            "Mapa de zonificación: al marcar el predio, el sistema propone su clave y normas a partir de unos 4,900 polígonos del plan municipal importados de QGIS a MySQL espacial.",
+            "Avisos en tiempo real con WebSockets (campanita, bandejas y detalle del expediente), resueltos desde el propio workflow, y correos al ciudadano con adjuntos generados dinámicamente.",
             "Endurecimiento de seguridad: archivos sensibles en almacenamiento privado servidos solo por endpoints autenticados, rate limiting y revocación de tokens.",
-            "Generación de documentos oficiales en PDF (constancias, oficios, órdenes de pago) con folio y código QR de verificación.",
-            "Notificaciones casi en tiempo real resueltas desde el propio workflow (a quién le toca actuar) y correos al ciudadano con adjuntos generados dinámicamente.",
             "Historial de movimientos por expediente con generación automática de minutas para auditorías.",
         ],
         technologies: [
@@ -67,6 +68,9 @@ export const projects: Project[] = [
             "React Hook Form",
             "Zod",
             "Tailwind CSS",
+            "Leaflet",
+            "Pusher",
+            "Vitest",
         ],
         diagrams: [
             {

@@ -42,7 +42,7 @@ const About = () => {
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <div className="w-2 h-2 bg-white rounded-full"></div>
-                                            <span className="text-gray-200">💼 Desarrollador Full Stack en CIFO Technologies</span>
+                                            <span className="text-gray-200">💼 Ingeniero de software en CIFO Technologies</span>
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <div className="w-2 h-2 bg-white rounded-full"></div>
@@ -94,7 +94,7 @@ const About = () => {
                                 </h2>
                                 <div className="space-y-4 text-gray-200 leading-relaxed">
                                     <p>
-                                        Soy Ingeniero en Desarrollo y Gestión de Software con más de 4 años de experiencia desarrollando soluciones web con tecnologías modernas como Laravel, React, Node.js y TypeScript.
+                                        Soy Ingeniero en Desarrollo y Gestión de Software con más de 3 años de experiencia desarrollando soluciones web con tecnologías modernas como Laravel, React, Node.js y TypeScript.
                                         Me especializo en construir aplicaciones eficientes, escalables y enfocadas en la experiencia del usuario.
                                     </p>
                                     <p>
@@ -137,27 +137,41 @@ const About = () => {
                                 <div className="space-y-6">
                                     <div className="border-l-4 border-white/40 pl-6">
                                         <h3 className="text-xl font-semibold text-white">CIFO Technologies</h3>
-                                        <p className="text-gray-300 mb-2">Desarrollador Full Stack · Septiembre 2025 — Actualidad</p>
+                                        <p className="text-gray-300 mb-2">Ingeniero de software · Septiembre 2025 — Actualidad</p>
                                         <p className="text-gray-200 text-sm leading-relaxed">
-                                            Participo en el rediseño del módulo de Egresos del sistema financiero de
-                                            un gobierno municipal: migración de una aplicación de escritorio a una
-                                            plataforma web (Laravel, GraphQL, Vue/Nuxt) que reimplementa el ciclo de
-                                            ejecución del gasto público -Comprometido, Devengado, Pagado- con
-                                            reversiones y cancelaciones contables conforme a la normatividad CONAC,
-                                            sobre Oracle y con una arquitectura por capas inspirada en DDD.
+                                            Desarrollé el sistema de trámites de Desarrollo Urbano de un gobierno municipal
+                                            (Laravel, React, TypeScript): flujos configurables por trámite, bandejas por área,
+                                            firma con e.firma del SAT en el navegador, licencias y oficios en PDF con formatos
+                                            oficiales, y cálculo de derechos y plazos en días hábiles. También desarrollé el
+                                            módulo de Egresos de un GRP (GraphQL/Lighthouse, Vue/Nuxt, Oracle): el ciclo
+                                            Comprometido, Devengado, Pagado con pólizas contables automáticas y cancelaciones
+                                            conforme a la normatividad CONAC.
                                         </p>
                                     </div>
                                     <div className="border-l-4 border-white/20 pl-6">
                                         <h3 className="text-xl font-semibold text-white">Gob-TI</h3>
-                                        <p className="text-gray-300 mb-2">Líder de Desarrollo / Full Stack · Agosto 2023 — Agosto 2025</p>
+                                        <p className="text-gray-300 mb-2">Líder de Desarrollo / Full Stack · Agosto 2023 — Septiembre 2025</p>
                                         <p className="text-gray-200 text-sm leading-relaxed">
-                                            Lideré un equipo de 3 desarrolladores en sistemas para gobierno municipal bajo
-                                            Clean Architecture, incluyendo un sistema de trámites de desarrollo urbano que
-                                            digitalizó más de 18 trámites: APIs REST en Laravel, interfaces en React con
-                                            TypeScript, workflows de autorización multinivel con firma digital, generación
-                                            de documentos oficiales en PDF y endurecimiento de seguridad para el manejo de
-                                            archivos sensibles. Eliminó el uso de hojas de Excel y la recaptura manual de
-                                            información ya proporcionada por el contribuyente.
+                                            Coordiné un equipo de 4 desarrolladores en sistemas para procesos gubernamentales.
+                                            Implementé Clean Architecture en Laravel en tres sistemas (Gestor Documental,
+                                            Adquisiciones y Programas Sociales) y lideré la adopción de React, Node.js y
+                                            TypeScript en el equipo.
+                                        </p>
+                                    </div>
+                                    <div className="border-l-4 border-white/20 pl-6">
+                                        <h3 className="text-xl font-semibold text-white">Núcleos Electro Magnéticos AVE</h3>
+                                        <p className="text-gray-300 mb-2">Desarrollador · Enero 2023 — Julio 2023</p>
+                                        <p className="text-gray-200 text-sm leading-relaxed">
+                                            Mantuve y mejoré el sistema administrativo en Laravel y desarrollé nuevos módulos
+                                            para la gestión de ventas y el control de inventario.
+                                        </p>
+                                    </div>
+                                    <div className="border-l-4 border-white/20 pl-6">
+                                        <h3 className="text-xl font-semibold text-white">Facultad de Ciencias de la Conducta</h3>
+                                        <p className="text-gray-300 mb-2">Desarrollador · Enero 2022 — Julio 2022</p>
+                                        <p className="text-gray-200 text-sm leading-relaxed">
+                                            Sistema web de inventario y préstamo de insumos de los centros de cómputo
+                                            (Vue.js, Laravel), con notificaciones en tiempo real para asegurar su devolución.
                                         </p>
                                     </div>
                                 </div>
