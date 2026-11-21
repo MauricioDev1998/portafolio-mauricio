@@ -3,6 +3,39 @@ import PageTransition from "../components/PageTransition"
 import perfilImg from "../assets/perfil.jpg"
 import cvFile from "../assets/CV_MAURICIO_REYES.pdf"
 import { socialLinks } from "../data/social"
+import Icon from "../components/Icon"
+
+const experience = [
+    {
+        company: "CIFO Technologies",
+        role: "Ingeniero de software",
+        period: "Sep 2025 — Hoy",
+        current: true,
+        description:
+            "Desarrollé el sistema de trámites de Desarrollo Urbano de un gobierno municipal (Laravel, React, TypeScript): flujos configurables por trámite, bandejas por área, firma con e.firma del SAT en el navegador, licencias y oficios en PDF con formatos oficiales, y cálculo de derechos y plazos en días hábiles. También desarrollé el módulo de Egresos de un GRP (GraphQL/Lighthouse, Vue/Nuxt, Oracle): el ciclo Comprometido, Devengado, Pagado con pólizas contables automáticas y cancelaciones conforme a la normatividad CONAC.",
+    },
+    {
+        company: "Gob-TI",
+        role: "Líder de Desarrollo / Full Stack",
+        period: "Ago 2023 — Sep 2025",
+        description:
+            "Coordiné un equipo de 4 desarrolladores en sistemas para procesos gubernamentales. Implementé Clean Architecture en Laravel en tres sistemas (Gestor Documental, Adquisiciones y Programas Sociales) y lideré la adopción de React, Node.js y TypeScript en el equipo.",
+    },
+    {
+        company: "Núcleos Electro Magnéticos AVE",
+        role: "Desarrollador",
+        period: "Ene 2023 — Jul 2023",
+        description:
+            "Mantuve y mejoré el sistema administrativo en Laravel y desarrollé nuevos módulos para la gestión de ventas y el control de inventario.",
+    },
+    {
+        company: "Facultad de Ciencias de la Conducta",
+        role: "Desarrollador",
+        period: "Ene 2022 — Jul 2022",
+        description:
+            "Sistema web de inventario y préstamo de insumos de los centros de cómputo (Vue.js, Laravel), con notificaciones en tiempo real para asegurar su devolución.",
+    },
+]
 
 const About = () => {
     return (
@@ -15,7 +48,7 @@ const About = () => {
                             Sobre <span className="text-gray-300">Mí</span>
                         </h1>
                         <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-                            Conoce más sobre mi trayectoria, pasiones y lo que me motiva como desarrollador
+                            Mi trayectoria, experiencia y formación como desarrollador
                         </p>
                     </div>
 
@@ -36,21 +69,21 @@ const About = () => {
                                     </div>
                                     
                                     <div className="space-y-4 text-sm">
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-2 h-2 bg-white rounded-full"></div>
-                                            <span className="text-gray-200">📍 Toluca, México</span>
+                                        <div className="flex items-center gap-3 text-gray-200">
+                                            <Icon name="location" className="w-5 h-5 text-gray-400" />
+                                            <span>Toluca, México</span>
                                         </div>
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-2 h-2 bg-white rounded-full"></div>
-                                            <span className="text-gray-200">💼 Ingeniero de software en CIFO Technologies</span>
+                                        <div className="flex items-center gap-3 text-gray-200">
+                                            <Icon name="briefcase" className="w-5 h-5 text-gray-400" />
+                                            <span>Ingeniero de software en CIFO Technologies</span>
                                         </div>
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-2 h-2 bg-white rounded-full"></div>
+                                        <div className="flex items-center gap-3 text-gray-200">
+                                            <Icon name="mail" className="w-5 h-5 text-gray-400" />
                                             <a
                                                 href="mailto:idgsmauricioreyes@gmail.com"
-                                                className="text-gray-200 hover:text-white transition-colors duration-300"
+                                                className="break-all hover:text-white transition-colors duration-300"
                                             >
-                                                📧 idgsmauricioreyes@gmail.com
+                                                idgsmauricioreyes@gmail.com
                                             </a>
                                         </div>
                                     </div>
@@ -88,102 +121,76 @@ const About = () => {
 
                         <div className="lg:col-span-2 space-y-12">
                             <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10">
-                                <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                                    <span className="text-4xl">👋</span>
+                                <h2 className="text-3xl font-bold text-white mb-6">
                                     ¿Quién soy?
                                 </h2>
                                 <div className="space-y-4 text-gray-200 leading-relaxed">
                                     <p>
-                                        Soy Ingeniero en Desarrollo y Gestión de Software con más de 3 años de experiencia desarrollando soluciones web con tecnologías modernas como Laravel, React, Node.js y TypeScript.
-                                        Me especializo en construir aplicaciones eficientes, escalables y enfocadas en la experiencia del usuario.
+                                        Soy Ingeniero en Desarrollo y Gestión de Software con más de 3 años de experiencia construyendo sistemas web,
+                                        principalmente para gobierno: trámites, finanzas públicas y gestión documental.
+                                        Trabajo sobre todo con Laravel, React y TypeScript, y también con Vue/Nuxt, NestJS y GraphQL.
                                     </p>
                                     <p>
-                                        Me apasiona la mejora continua, la colaboración y el uso de buenas prácticas de desarrollo. 
-                                        Actualmente estoy expandiendo mis habilidades hacia el uso de Docker para proyectos robustos y productivos.
-
-                                        Estoy abierto a colaborar en proyectos desafiantes, ya sea en desarrollo backend o frontend.
+                                        Me interesa que el software sea correcto donde más importa: dinero, firmas y auditoría.
+                                        Por eso cuido la arquitectura por capas, las transacciones y las pruebas.
+                                        Estoy abierto a colaborar en proyectos desafiantes, tanto de backend como de frontend.
                                     </p>
                                 </div>
                             </div>
 
                             <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10">
-                                <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                                    <span className="text-4xl">💻</span>
+                                <h2 className="text-3xl font-bold text-white mb-6">
                                     ¿Qué hago?
                                 </h2>
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div className="space-y-3">
                                         <h3 className="text-xl font-semibold text-white">Frontend</h3>
                                         <p className="text-gray-200 text-sm">
-                                            Desarrollo interfaces modernas y responsivas con React, TypeScript y Tailwind CSS. 
-                                            Me enfoco en crear experiencias de usuario intuitivas y accesibles.
+                                            Desarrollo interfaces responsivas con React, Vue/Nuxt, TypeScript y Tailwind CSS,
+                                            con formularios validados y manejo de datos con TanStack Query.
                                         </p>
                                     </div>
                                     <div className="space-y-3">
                                         <h3 className="text-xl font-semibold text-white">Backend</h3>
                                         <p className="text-gray-200 text-sm">
-                                            Construyo APIs robustas y escalables con Laravel, Node.js y Express. 
-                                            Manejo bases de datos y arquitecturas eficientes.
+                                            Construyo APIs REST y GraphQL con Laravel, NestJS y Express,
+                                            sobre MySQL, PostgreSQL y Oracle, con arquitectura por capas y pruebas.
                                         </p>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10">
-                                <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                                    <span className="text-4xl">💼</span>
+                                <h2 className="text-3xl font-bold text-white mb-6">
                                     Experiencia
                                 </h2>
-                                <div className="space-y-6">
-                                    <div className="border-l-4 border-white/40 pl-6">
-                                        <h3 className="text-xl font-semibold text-white">CIFO Technologies</h3>
-                                        <p className="text-gray-300 mb-2">Ingeniero de software · Septiembre 2025 — Actualidad</p>
-                                        <p className="text-gray-200 text-sm leading-relaxed">
-                                            Desarrollé el sistema de trámites de Desarrollo Urbano de un gobierno municipal
-                                            (Laravel, React, TypeScript): flujos configurables por trámite, bandejas por área,
-                                            firma con e.firma del SAT en el navegador, licencias y oficios en PDF con formatos
-                                            oficiales, y cálculo de derechos y plazos en días hábiles. También desarrollé el
-                                            módulo de Egresos de un GRP (GraphQL/Lighthouse, Vue/Nuxt, Oracle): el ciclo
-                                            Comprometido, Devengado, Pagado con pólizas contables automáticas y cancelaciones
-                                            conforme a la normatividad CONAC.
-                                        </p>
-                                    </div>
-                                    <div className="border-l-4 border-white/20 pl-6">
-                                        <h3 className="text-xl font-semibold text-white">Gob-TI</h3>
-                                        <p className="text-gray-300 mb-2">Líder de Desarrollo / Full Stack · Agosto 2023 — Septiembre 2025</p>
-                                        <p className="text-gray-200 text-sm leading-relaxed">
-                                            Coordiné un equipo de 4 desarrolladores en sistemas para procesos gubernamentales.
-                                            Implementé Clean Architecture en Laravel en tres sistemas (Gestor Documental,
-                                            Adquisiciones y Programas Sociales) y lideré la adopción de React, Node.js y
-                                            TypeScript en el equipo.
-                                        </p>
-                                    </div>
-                                    <div className="border-l-4 border-white/20 pl-6">
-                                        <h3 className="text-xl font-semibold text-white">Núcleos Electro Magnéticos AVE</h3>
-                                        <p className="text-gray-300 mb-2">Desarrollador · Enero 2023 — Julio 2023</p>
-                                        <p className="text-gray-200 text-sm leading-relaxed">
-                                            Mantuve y mejoré el sistema administrativo en Laravel y desarrollé nuevos módulos
-                                            para la gestión de ventas y el control de inventario.
-                                        </p>
-                                    </div>
-                                    <div className="border-l-4 border-white/20 pl-6">
-                                        <h3 className="text-xl font-semibold text-white">Facultad de Ciencias de la Conducta</h3>
-                                        <p className="text-gray-300 mb-2">Desarrollador · Enero 2022 — Julio 2022</p>
-                                        <p className="text-gray-200 text-sm leading-relaxed">
-                                            Sistema web de inventario y préstamo de insumos de los centros de cómputo
-                                            (Vue.js, Laravel), con notificaciones en tiempo real para asegurar su devolución.
-                                        </p>
-                                    </div>
+                                <div className="divide-y divide-white/10">
+                                    {experience.map((job) => (
+                                        <div
+                                            key={job.company}
+                                            className="py-5 first:pt-0 last:pb-0"
+                                        >
+                                            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-2">
+                                                <h3 className="text-lg font-semibold text-white">
+                                                    {job.role}
+                                                    <span className="font-normal text-gray-300"> · {job.company}</span>
+                                                </h3>
+                                                <p className={`text-xs uppercase tracking-widest font-semibold whitespace-nowrap ${job.current ? 'text-white' : 'text-gray-400'}`}>
+                                                    {job.period}
+                                                </p>
+                                            </div>
+                                            <p className="text-gray-200 text-sm leading-relaxed">{job.description}</p>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
 
                             <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10">
-                                <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                                    <span className="text-4xl">🎓</span>
+                                <h2 className="text-3xl font-bold text-white mb-6">
                                     Educación
                                 </h2>
                                 <div className="space-y-6">
-                                    <div className="border-l-4 border-white/20 pl-6">
+                                    <div>
                                         <h3 className="text-xl font-semibold text-white">Universidad Tecnológica del Valle de Toluca</h3>
                                         <p className="text-gray-300 mb-2">Ingeniero en Desarrollo y Gestión de Software</p>
                                         <p className="text-gray-200 text-sm">
@@ -194,8 +201,7 @@ const About = () => {
                             </div>
 
                             <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10">
-                                <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                                    <span className="text-4xl">📚</span>
+                                <h2 className="text-3xl font-bold text-white mb-6">
                                     Cursos
                                 </h2>
                                 <div className="grid md:grid-cols-2 gap-6">
@@ -227,36 +233,8 @@ const About = () => {
                                             style={{ animationDelay: `${index * 100}ms` }}
                                         >
                                             <h4 className="font-semibold text-white mb-2">{course.title}</h4>
-                                            <p className="text-gray-200 text-sm">{course.description}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10">
-                                <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                                    <span className="text-4xl">❤️</span>
-                                    Lo que me gusta
-                                </h2>
-                                <div className="grid md:grid-cols-3 gap-4">
-                                    {[
-                                        { icon: "🚀", text: "Nuevas tecnologías" },
-                                        { icon: "⚡", text: "Optimización" },
-                                        { icon: "🔧", text: "Resolución de problemas" },
-                                        { icon: "📖", text: "Aprendizaje continuo" },
-                                        { icon: "🤝", text: "Trabajo en equipo" },
-                                        { icon: "🎮", text: "Videojuegos" },
-                                        { icon: "⚽", text: "Fútbol" },
-                                        { icon: "🎬", text: "Cine" },
-                                        { icon: "🎵", text: "Música" }
-                                    ].map((interest, index) => (
-                                        <div
-                                            key={interest.text}
-                                            className="animate-fade-in flex items-center gap-3 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/10 hover:scale-105"
-                                            style={{ animationDelay: `${index * 100}ms` }}
-                                        >
-                                            <span className="text-2xl">{interest.icon}</span>
-                                            <span className="text-gray-200 font-medium">{interest.text}</span>
+                                            <p className="text-gray-200 text-sm mb-2">{course.description}</p>
+                                            <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold">{course.from}</p>
                                         </div>
                                     ))}
                                 </div>

@@ -4,6 +4,11 @@ import PageTransition from "../components/PageTransition"
 import perfilImg from "../assets/perfil.jpg"
 import cvFile from "../assets/CV_MAURICIO_REYES.pdf"
 import { socialLinks } from "../data/social"
+import { projects } from "../data/projects"
+import Icon from "../components/Icon"
+
+// Los primeros proyectos de la lista son los que se destacan en el inicio.
+const featuredProjects = projects.slice(0, 3)
 
 const Home = () => {
     return (
@@ -64,13 +69,6 @@ const Home = () => {
                                     >
                                         Descargar CV
                                     </a>
-                                    
-                                    <Link
-                                        to="/contact"
-                                        className="px-10 py-4 border-2 border-gray-400 rounded-2xl text-gray-200 font-semibold hover:bg-white/10 hover:border-gray-300 hover:text-white transition-all duration-300 backdrop-blur-sm"
-                                    >
-                                        Contáctame
-                                    </Link>
                                 </div>
 
                                 <div className="flex gap-4 justify-center lg:justify-start pt-2">
@@ -111,6 +109,52 @@ const Home = () => {
                             ))}
                         </div>
                     </div>
+
+                    <section className="mt-24">
+                        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+                            <div>
+                                <p className="text-gray-400 text-xs mb-3 tracking-widest font-semibold uppercase">Trabajo reciente</p>
+                                <h2 className="text-3xl md:text-4xl font-bold text-white">Proyectos destacados</h2>
+                            </div>
+                            <Link
+                                to="/projects"
+                                className="inline-flex items-center gap-2 text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-300"
+                            >
+                                Ver todos los proyectos
+                                <Icon name="arrowRight" className="w-4 h-4" />
+                            </Link>
+                        </div>
+
+                        <div className="grid md:grid-cols-3 gap-6">
+                            {featuredProjects.map((project) => (
+                                <Link
+                                    key={project.title}
+                                    to="/projects"
+                                    className="flex flex-col text-left bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/30 hover:bg-white/10 transition-colors duration-300"
+                                >
+                                    {project.context && (
+                                        <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-3">
+                                            {project.context}
+                                        </p>
+                                    )}
+                                    <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+                                    <p className="text-gray-200 text-sm leading-relaxed line-clamp-4 mb-6">
+                                        {project.description}
+                                    </p>
+                                    <div className="mt-auto flex flex-wrap gap-2">
+                                        {project.technologies.slice(0, 5).map((tech) => (
+                                            <span
+                                                key={tech}
+                                                className="px-3 py-1 bg-white/10 rounded-lg text-xs text-gray-100 border border-white/10"
+                                            >
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </section>
                 </div>
             </div>
         </PageTransition>

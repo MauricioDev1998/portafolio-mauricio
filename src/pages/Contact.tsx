@@ -1,4 +1,5 @@
 import PageTransition from "../components/PageTransition";
+import Icon from "../components/Icon";
 import React, { useState } from "react";
 import { sendContactForm } from "../api/contactApi";
 import type { ContactFormData } from "../types";
@@ -63,25 +64,27 @@ const Contact = () => {
                     </div>
                     <div className=" gap-12">
                         <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10 shadow-2xl flex flex-col justify-center">
-                            <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                                <span className="text-4xl">📬</span>
+                            <h2 className="text-3xl font-bold text-white mb-6">
                                 Formulario de contacto
                             </h2>
-                            
-                            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-6">
-                                <div className="flex items-center gap-3 mb-2 md:mb-0">
-                                    <span className="text-2xl">📧</span>
-                                    <span className="text-gray-200 text-lg">idgsmauricioreyes@gmail.com</span>
-                                </div>
-                                <div className="hidden md:block h-8 w-px bg-white/20 mx-2" />
-                                <div className="flex items-center gap-3">
-                                    <span className="text-2xl">📍</span>
-                                    <span className="text-gray-200 text-lg">Toluca, México</span>
+
+                            <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 mb-8 pb-8 border-b border-white/10">
+                                <a
+                                    href="mailto:idgsmauricioreyes@gmail.com"
+                                    className="flex items-center gap-3 text-gray-200 hover:text-white transition-colors duration-300"
+                                >
+                                    <Icon name="mail" className="w-5 h-5 text-gray-400" />
+                                    <span className="break-all">idgsmauricioreyes@gmail.com</span>
+                                </a>
+                                <div className="hidden md:block h-6 w-px bg-white/20" />
+                                <div className="flex items-center gap-3 text-gray-200">
+                                    <Icon name="location" className="w-5 h-5 text-gray-400" />
+                                    <span>Toluca, México</span>
                                 </div>
                             </div>
                             {submitted ? (
                                 <div className="flex flex-col items-center justify-center h-full animate-fade-in">
-                                    <span className="text-green-400 text-4xl mb-4">✔️</span>
+                                    <Icon name="check" className="w-12 h-12 text-green-400 mb-4" />
                                     <p className="text-green-400 text-center font-semibold text-lg">
                                         ¡Gracias por tu mensaje! Te responderé pronto.
                                     </p>
@@ -96,8 +99,9 @@ const Contact = () => {
                             ) : (
                                 <form onSubmit={handleSubmit} noValidate className="space-y-6">
                                     <div>
-                                        <label className="block text-white font-semibold mb-2">Nombre</label>
+                                        <label htmlFor="name" className="block text-white font-semibold mb-2">Nombre</label>
                                         <input
+                                            id="name"
                                             type="text"
                                             name="name"
                                             value={form.name}
@@ -105,7 +109,7 @@ const Contact = () => {
                                             required
                                             className={`w-full px-4 py-3 rounded-xl bg-white/10 text-white border ${
                                                 errors.name ? "border-red-500" : "border-white/20"
-                                            } focus:outline-none focus:border-blue-400 transition placeholder-gray-400`}
+                                            } focus:outline-none focus:border-white/60 transition placeholder-gray-400`}
                                             placeholder="Tu nombre"
                                         />
                                         {errors.name && (
@@ -113,8 +117,9 @@ const Contact = () => {
                                         )}
                                     </div>
                                     <div>
-                                        <label className="block text-white font-semibold mb-2">Email</label>
+                                        <label htmlFor="email" className="block text-white font-semibold mb-2">Email</label>
                                         <input
+                                            id="email"
                                             type="email"
                                             name="email"
                                             value={form.email}
@@ -122,7 +127,7 @@ const Contact = () => {
                                             required
                                             className={`w-full px-4 py-3 rounded-xl bg-white/10 text-white border ${
                                                 errors.email ? "border-red-500" : "border-white/20"
-                                            } focus:outline-none focus:border-blue-400 transition placeholder-gray-400`}
+                                            } focus:outline-none focus:border-white/60 transition placeholder-gray-400`}
                                             placeholder="tucorreo@email.com"
                                         />
                                         {errors.email && (
@@ -130,8 +135,9 @@ const Contact = () => {
                                         )}
                                     </div>
                                     <div>
-                                        <label className="block text-white font-semibold mb-2">Mensaje</label>
+                                        <label htmlFor="message" className="block text-white font-semibold mb-2">Mensaje</label>
                                         <textarea
+                                            id="message"
                                             name="message"
                                             value={form.message}
                                             onChange={handleChange}
@@ -139,7 +145,7 @@ const Contact = () => {
                                             rows={4}
                                             className={`w-full px-4 py-3 rounded-xl bg-white/10 text-white border ${
                                                 errors.message ? "border-red-500" : "border-white/20"
-                                            } focus:outline-none focus:border-blue-400 transition resize-vertical placeholder-gray-400`}
+                                            } focus:outline-none focus:border-white/60 transition resize-vertical placeholder-gray-400`}
                                             placeholder="Escribe tu mensaje..."
                                         />
                                         {errors.message && (
@@ -154,7 +160,7 @@ const Contact = () => {
                                     <button
                                         type="submit"
                                         disabled={loading}
-                                        className="w-full py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        className="w-full py-3 bg-white text-black rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         {loading ? "Enviando..." : "Enviar"}
                                     </button>

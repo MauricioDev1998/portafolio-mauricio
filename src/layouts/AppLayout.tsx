@@ -26,7 +26,9 @@ const AppLayout = () => {
         { name: 'Sobre mí', path: '/about' },
         { name: 'Skills', path: '/skills' },
         { name: 'Proyectos', path: '/projects' },
-        { name: 'Contacto', path: '/contact' }
+        // Contacto oculto por ahora. Para reactivarlo, descomenta esta línea
+        // y la ruta "contact" en src/routes/AppRouter.tsx.
+        // { name: 'Contacto', path: '/contact' },
     ]
 
     return (

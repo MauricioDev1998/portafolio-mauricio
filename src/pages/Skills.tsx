@@ -10,177 +10,138 @@ import expressIcon from "../assets/icons-tech/express.svg"
 import htmlIcon from "../assets/icons-tech/w3_html5-icon.svg"
 import cssIcon from "../assets/icons-tech/icons8-css3.svg"
 import tailwindIcon from "../assets/icons-tech/icons8-tailwind-css.svg"
-import bootstrapIcon from "../assets/icons-tech/icons8-bootstrap.svg"
 import sassIcon from "../assets/icons-tech/icons8-sass-64.png"
 import mysqlIcon from "../assets/icons-tech/mysql.svg"
-import mongoIcon from "../assets/icons-tech/mongo.svg"
 import gitIcon from "../assets/icons-tech/git.svg"
 import githubIcon from "../assets/icons-tech/github.svg"
-import vscIcon from "../assets/icons-tech/vsc.svg"
 import postmanIcon from "../assets/icons-tech/postman.svg"
-import firebaseIcon from "../assets/icons-tech/firebase.svg"
 import jwtIcon from "../assets/icons-tech/jwt.svg"
-import reduxIcon from "../assets/icons-tech/redux.svg"
-import nextIcon from "../assets/icons-tech/next-js.svg"
 import vueIcon from "../assets/icons-tech/vuejs-icon.svg"
-import jqueryIcon from "../assets/icons-tech/jquery-icon.svg"
-import materialUiIcon from "../assets/icons-tech/material-ui-1.svg"
-import sequelizeIcon from "../assets/icons-tech/sequelize.svg"
-import javaIcon from "../assets/icons-tech/java.svg"
-import springIcon from "../assets/icons-tech/spring.svg"
-import pythonIcon from "../assets/icons-tech/python.svg"
-import djangoIcon from "../assets/icons-tech/django.svg"
 import tanstackQueryIcon from "../assets/icons-tech/tanstack-query.svg"
 import reactHookFormIcon from "../assets/icons-tech/react-hook-form.svg"
 import zodIcon from "../assets/icons-tech/zod.svg"
 import viteIcon from "../assets/icons-tech/vite.svg"
-import angularIcon from "../assets/icons-tech/angular.svg"
 import dockerIcon from "../assets/icons-tech/docker.svg"
 import npmIcon from "../assets/icons-tech/npm.svg"
 import composerIcon from "../assets/icons-tech/composer.svg"
 import graphqlIcon from "../assets/icons-tech/graphql.svg"
 import oracleIcon from "../assets/icons-tech/oracle.svg"
+import nestIcon from "../assets/icons-tech/nestjs.svg"
+import postgresIcon from "../assets/icons-tech/postgresql.svg"
+import prismaIcon from "../assets/icons-tech/prisma.svg"
+import nuxtIcon from "../assets/icons-tech/nuxtdotjs.svg"
+import jestIcon from "../assets/icons-tech/jest.svg"
+import vitestIcon from "../assets/icons-tech/vitest.svg"
+import flutterIcon from "../assets/icons-tech/flutter.svg"
+import swaggerIcon from "../assets/icons-tech/swagger.svg"
+import githubActionsIcon from "../assets/icons-tech/githubactions.svg"
+
+type Skill = {
+    name: string
+    icon: string
+    /** Icono monocromático oscuro: se pinta en blanco para que se vea sobre el fondo. */
+    dark?: boolean
+}
+
+// Solo tecnologías que aparecen en los proyectos de src/data/projects.ts.
+// Si agregas un proyecto con una tecnología nueva, agrégala también aquí.
+const technologies: { category: string; skills: Skill[] }[] = [
+    {
+        category: "Frontend",
+        skills: [
+            { name: "React", icon: reactIcon },
+            { name: "TypeScript", icon: typescriptIcon },
+            { name: "JavaScript", icon: javascriptIcon },
+            { name: "Vue.js", icon: vueIcon },
+            { name: "Nuxt", icon: nuxtIcon, dark: true },
+            { name: "Tailwind CSS", icon: tailwindIcon },
+            { name: "Sass", icon: sassIcon },
+            { name: "HTML5", icon: htmlIcon },
+            { name: "CSS3", icon: cssIcon },
+            { name: "TanStack Query", icon: tanstackQueryIcon },
+            { name: "React Hook Form", icon: reactHookFormIcon },
+            { name: "Zod", icon: zodIcon },
+            { name: "Flutter", icon: flutterIcon, dark: true },
+        ],
+    },
+    {
+        category: "Backend",
+        skills: [
+            { name: "PHP", icon: phpIcon },
+            { name: "Laravel", icon: laravelIcon },
+            { name: "Node.js", icon: nodeIcon },
+            { name: "NestJS", icon: nestIcon, dark: true },
+            { name: "Express.js", icon: expressIcon },
+            { name: "GraphQL", icon: graphqlIcon, dark: true },
+            { name: "Prisma", icon: prismaIcon, dark: true },
+            { name: "JWT", icon: jwtIcon },
+            { name: "Swagger", icon: swaggerIcon, dark: true },
+        ],
+    },
+    {
+        category: "Bases de Datos",
+        skills: [
+            { name: "MySQL", icon: mysqlIcon },
+            { name: "PostgreSQL", icon: postgresIcon, dark: true },
+            { name: "Oracle", icon: oracleIcon, dark: true },
+        ],
+    },
+    {
+        category: "Testing y Herramientas",
+        skills: [
+            { name: "Jest", icon: jestIcon, dark: true },
+            { name: "Vitest", icon: vitestIcon, dark: true },
+            { name: "Docker", icon: dockerIcon },
+            { name: "GitHub Actions", icon: githubActionsIcon, dark: true },
+            { name: "Git", icon: gitIcon },
+            { name: "GitHub", icon: githubIcon, dark: true },
+            { name: "Postman", icon: postmanIcon },
+            { name: "Vite", icon: viteIcon },
+            { name: "npm", icon: npmIcon },
+            { name: "Composer", icon: composerIcon },
+        ],
+    },
+]
 
 const Skills = () => {
-    const technologies = [
-        {
-            category: "Frontend",
-            skills: [
-                { name: "React", icon: reactIcon, level: "Avanzado", color: "from-blue-500 to-cyan-500" },
-                { name: "TypeScript", icon: typescriptIcon, level: "Intermedio", color: "from-blue-600 to-blue-700" },
-                { name: "JavaScript", icon: javascriptIcon, level: "Avanzado", color: "from-yellow-400 to-yellow-500" },
-                { name: "HTML5", icon: htmlIcon, level: "Avanzado", color: "from-orange-500 to-red-500" },
-                { name: "CSS3", icon: cssIcon, level: "Avanzado", color: "from-blue-500 to-blue-600" },
-                { name: "Tailwind CSS", icon: tailwindIcon, level: "Avanzado", color: "from-cyan-400 to-cyan-500" },
-                { name: "Bootstrap", icon: bootstrapIcon, level: "Intermedio", color: "from-purple-500 to-purple-600" },
-                { name: "Sass", icon: sassIcon, level: "Intermedio", color: "from-pink-500 to-pink-600" },
-                { name: "Next.js", icon: nextIcon, level: "Básico", color: "from-gray-700 to-gray-800" },
-                { name: "Vue.js", icon: vueIcon, level: "Intermedio", color: "from-green-400 to-green-500" },
-                { name: "Angular", icon: angularIcon, level: "Básico", color: "from-red-600 to-pink-600", dark: true },
-                { name: "TanStack Query", icon: tanstackQueryIcon, level: "Intermedio", color: "from-red-500 to-amber-500" },
-                { name: "React Hook Form", icon: reactHookFormIcon, level: "Intermedio", color: "from-pink-500 to-rose-500" },
-                { name: "Zod", icon: zodIcon, level: "Intermedio", color: "from-blue-600 to-indigo-600" },
-                { name: "Redux", icon: reduxIcon, level: "Intermedio", color: "from-purple-600 to-purple-700" },
-                { name: "Material-UI", icon: materialUiIcon, level: "Básico", color: "from-blue-400 to-blue-500" },
-                { name: "jQuery", icon: jqueryIcon, level: "Intermedio", color: "from-blue-600 to-indigo-600" }
-            ]
-        },
-        {
-            category: "Backend",
-            skills: [
-                { name: "PHP", icon: phpIcon, level: "Avanzado", color: "from-purple-600 to-indigo-600" },
-                { name: "Laravel", icon: laravelIcon, level: "Avanzado", color: "from-red-500 to-red-600" },
-                { name: "Node.js", icon: nodeIcon, level: "Intermedio", color: "from-green-500 to-green-600" },
-                { name: "Express.js", icon: expressIcon, level: "Intermedio", color: "from-gray-600 to-gray-700" },
-                { name: "Java", icon: javaIcon, level: "Básico", color: "from-orange-600 to-red-600" },
-                { name: "Spring", icon: springIcon, level: "Básico", color: "from-green-600 to-green-700" },
-                { name: "Python", icon: pythonIcon, level: "Básico", color: "from-yellow-500 to-blue-500" },
-                { name: "Django", icon: djangoIcon, level: "Básico", color: "from-green-700 to-green-800", dark: true },
-                { name: "JWT", icon: jwtIcon, level: "Intermedio", color: "from-pink-500 to-rose-500" },
-                { name: "Sequelize", icon: sequelizeIcon, level: "Intermedio", color: "from-blue-500 to-indigo-500" },
-                { name: "GraphQL", icon: graphqlIcon, level: "Avanzado", color: "from-pink-600 to-fuchsia-600", dark: true }
-            ]
-        },
-        {
-            category: "Bases de Datos",
-            skills: [
-                { name: "MySQL", icon: mysqlIcon, level: "Avanzado", color: "from-blue-600 to-orange-500" },
-                { name: "Oracle", icon: oracleIcon, level: "Avanzado", color: "from-red-600 to-red-700", dark: true },
-                { name: "MongoDB", icon: mongoIcon, level: "Básico", color: "from-green-500 to-green-600" },
-                { name: "Firebase", icon: firebaseIcon, level: "Intermedio", color: "from-yellow-500 to-orange-500" }
-            ]
-        },
-        {
-            category: "Herramientas",
-            skills: [
-                { name: "Git", icon: gitIcon, level: "Avanzado", color: "from-orange-500 to-red-500" },
-                { name: "GitHub", icon: githubIcon, level: "Avanzado", color: "from-gray-700 to-gray-900", dark: true },
-                { name: "VS Code", icon: vscIcon, level: "Avanzado", color: "from-blue-500 to-blue-600" },
-                { name: "Postman", icon: postmanIcon, level: "Avanzado", color: "from-orange-500 to-orange-600" },
-                { name: "Vite", icon: viteIcon, level: "Intermedio", color: "from-purple-500 to-yellow-400" },
-                { name: "Docker", icon: dockerIcon, level: "Básico", color: "from-blue-400 to-blue-600" },
-                { name: "npm", icon: npmIcon, level: "Avanzado", color: "from-red-600 to-red-700" },
-                { name: "Composer", icon: composerIcon, level: "Avanzado", color: "from-amber-600 to-yellow-700" }
-            ]
-        }
-    ]
-
-    const getLevelColor = (level: string) => {
-        switch (level) {
-            case "Avanzado":
-                return "text-green-400"
-            case "Intermedio":
-                return "text-yellow-400"
-            case "Básico":
-                return "text-blue-400"
-            default:
-                return "text-gray-400"
-        }
-    }
-
     return (
         <PageTransition>
             <div className="min-h-screen px-6 py-20">
                 <div className="max-w-7xl mx-auto">
-                    
+
                     <div className="text-center mb-20">
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in">
+                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
                             Mis <span className="text-gray-300">Skills</span>
                         </h1>
-                        <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed mb-12">
-                            Stack tecnológico con el que trabajo y mi nivel de experiencia en cada una
+                        <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                            Las tecnologías con las que construí los proyectos de este portafolio
                         </p>
                     </div>
 
-                    <div className="mb-20">
+                    <div className="space-y-16">
                         {technologies.map((category, categoryIndex) => (
-                            <div key={category.category} className="mb-16">
-                                <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+                            <section key={category.category}>
+                                <h2 className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-6 pb-4 border-b border-white/10">
                                     {category.category}
-                                </h3>
-                                
-                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+                                </h2>
+
+                                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                                     {category.skills.map((skill, skillIndex) => (
                                         <div
                                             key={skill.name}
-                                            className="animate-fade-in group relative bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl cursor-pointer"
-                                            style={{ animationDelay: `${(categoryIndex * 100) + (skillIndex * 50)}ms` }}
+                                            className="animate-fade-in flex flex-col items-center text-center gap-3 bg-white/5 backdrop-blur-xl rounded-2xl px-4 py-6 border border-white/10 hover:border-white/30 hover:bg-white/10 transition-colors duration-300"
+                                            style={{ animationDelay: `${(categoryIndex * 100) + (skillIndex * 40)}ms` }}
                                         >
-                                            <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
-                                            
-                                            <div className="relative z-10 flex flex-col items-center text-center">
-                                                <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                                                    <img
-                                                        src={skill.icon}
-                                                        alt={skill.name}
-                                                        className={`w-full h-full object-contain transition-all duration-500 ${
-                                                            skill.dark
-                                                                ? 'brightness-0 invert opacity-80 group-hover:opacity-100'
-                                                                : 'group-hover:drop-shadow-lg'
-                                                        }`}
-                                                    />
-                                                </div>
-                                                
-                                                <h4 className="text-white font-semibold text-xs mb-1 group-hover:text-white transition-colors duration-300">
-                                                    {skill.name}
-                                                </h4>
-                                                
-                                                <span className={`text-xs font-medium ${getLevelColor(skill.level)} group-hover:text-white transition-colors duration-300`}>
-                                                    {skill.level}
-                                                </span>
-                                                
-                                                <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-white/30 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-500"></div>
-                                                <div className="absolute -bottom-1 -left-1 w-1 h-1 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-700"></div>
-                                            </div>
-                                            
-                                            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-black/80 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
-                                                {skill.name} - {skill.level}
-                                                <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-black/80"></div>
-                                            </div>
+                                            <img
+                                                src={skill.icon}
+                                                alt=""
+                                                className={`w-10 h-10 object-contain ${skill.dark ? 'brightness-0 invert opacity-90' : ''}`}
+                                            />
+                                            <span className="text-white font-medium text-sm">{skill.name}</span>
                                         </div>
                                     ))}
                                 </div>
-                            </div>
+                            </section>
                         ))}
                     </div>
                 </div>
